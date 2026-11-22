@@ -1,0 +1,5 @@
+core/db_cred.php
+.DS_Store
+error/error.log
+images/auctions/*
+!images/auctions/.gitkeep
