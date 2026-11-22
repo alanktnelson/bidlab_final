@@ -35,7 +35,7 @@ A request flows through `views` → `actions` → `controllers` → `classes` �
 3. Create a database called `bidlab`, select it in phpMyAdmin, and run `database/bidlab.sql`, then `database/escrow.sql`, then `database/admin.sql` in the SQL tab. Make yourself admin: `UPDATE users SET user_role = 'admin' WHERE user_email = 'you@example.com';` The tables can also share an existing database, such as a school account's.
 4. Copy `core/db_cred.example.php` to `core/db_cred.php` and enter your database details.
 5. Let the web server write photos and logs: `chmod 777 images/auctions error`. This is for your own laptop only.
-6. Open <http://localhost/bidlab/>.
+6. Open <http://localhost/bidlab_fixed/>.
 
 ## Team
 
@@ -46,19 +46,4 @@ A request flows through `views` → `actions` → `controllers` → `classes` �
 | Bridgetta | `database/` | `database` |
 | Alan | Merging and testing the app together | `integration`, `dev`, `main` |
 
-## Not built yet
 
-- Email notifications (won, pay now, paid, shipped, dispute, payout).
-- Delivery address on orders, user reports, offering the item to the next bidder when a winner does not pay.
-- Promoted auctions and password reset.
-- Login rate limiting, which should be added before any public launch.
-
-## Decisions still open
-
-These values are placeholders at the top of `core/core.php`:
-
-- Currency: `GHS`
-- Minimum bid increment: 5.00
-- Shortest and longest auction: 2 minutes (handy for demos) and 30 days
-
-Escrow settings (Paystack, 5% fee, 48 hours to pay, 7 days to auto-release) are in `core/escrow_config.php`. Promotion fee and reserve prices are undecided.
